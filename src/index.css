@@ -1,0 +1,68 @@
+/* src/index.css */
+:root {
+  --fuchsia: #FF0059;
+  --cherry: #A9003B;
+  --white: #FFFFFF;
+  --carbon: #232323;
+  --black: #000000;
+}
+
+body {
+  margin: 0;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  color: var(--fuchsia);
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+}
+
+h2 {
+  color: var(--cherry);
+  border-bottom: 2px solid var(--cherry);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Estilo para las tarjetas de proyectos */
+.card {
+  background-color: var(--carbon);
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 5px solid var(--fuchsia); /* Detalle en fucsia */
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  border-left-color: var(--white);
+  box-shadow: 0 10px 20px rgba(255, 0, 89, 0.2);
+}
+
+.btn-ver {
+  background-color: var(--fuchsia);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.btn-ver:hover {
+  background-color: var(--cherry);
+}
