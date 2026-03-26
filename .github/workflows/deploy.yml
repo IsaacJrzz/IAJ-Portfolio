@@ -2,7 +2,7 @@ name: Deploy Portfolio to Pages
 
 on:
   push:
-    branches: ["main"] # Asegúrate de que tu rama sea 'main' o cámbialo a 'master'
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -24,15 +24,17 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        # 'npm ci' es más estricto y limpio para servidores
+        run: npm ci 
 
       - name: Build
-        run: npm run build
+        # Forzamos la ejecución vía 'node' para ignorar problemas de permisos del binario
+        run: node node_modules/vite/bin/vite.js build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist # Vite genera la web en la carpeta 'dist'
+          path: dist
 
   deploy:
     needs: build
